@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Portfolio</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body class="admin-body">
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">← Portfolio</a>
+    <button class="btn-ghost" id="logout-btn" style="display:none">Log out</button>
+  </nav>
+
+  <!-- ── LOGIN SCREEN ── -->
+  <div class="login-screen" id="login-screen">
+    <div class="login-card">
+      <h2 class="login-title">Admin Access</h2>
+      <p class="login-sub">Enter your password to manage media.</p>
+      <form id="login-form">
+        <input
+          type="password"
+          id="pw-input"
+          class="input"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+        />
+        <button type="submit" class="btn-primary full-width">Enter</button>
+        <p class="login-error" id="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── ADMIN PANEL ── -->
+  <div class="admin-panel" id="admin-panel" style="display:none">
+
+    <!-- Upload zone -->
+    <section class="upload-section">
+      <div
+        class="drop-zone"
+        id="drop-zone"
+        tabindex="0"
+        role="button"
+        aria-label="Upload media files"
+      >
+        <div class="drop-icon">⬆</div>
+        <p class="drop-title">Drag &amp; drop files here</p>
+        <p class="drop-sub">or click to browse — photos, graphics, videos up to 500 MB each</p>
+        <input type="file" id="file-input" multiple accept="image/*,video/*,.gif,.svg,.pdf" hidden />
+      </div>
+
+      <!-- Upload queue -->
+      <div class="upload-queue" id="upload-queue"></div>
+
+      <button class="btn-primary" id="upload-btn" style="display:none">
+        Upload <span id="upload-count"></span> file(s)
+      </button>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider">
+      <span>Uploaded media</span>
+    </div>
+
+    <!-- Admin gallery -->
+    <div class="admin-stats" id="admin-stats"></div>
+    <div class="admin-gallery" id="admin-gallery"></div>
+
+  </div>
+
+  <!-- ── TOAST ── -->
+  <div class="toast" id="toast"></div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+node_modules/
+uploads/
+.env
+*.log
+scrape-google-photos.js
+scrape-videos.js
+scrape-videos-v2.js
+rename-uploads.js
